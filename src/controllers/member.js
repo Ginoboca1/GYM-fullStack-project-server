@@ -68,6 +68,7 @@ const createMember = async (req, res) => {
       error: false,
     });
   } catch (error) {
+    console.log(error);
     if (error.message.includes('E11000 duplicate key error collection')) {
       return res.status(400).json({
         message: 'Email already exists',
